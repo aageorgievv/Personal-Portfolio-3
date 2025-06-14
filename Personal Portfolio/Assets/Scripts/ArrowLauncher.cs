@@ -48,8 +48,8 @@ public class ArrowLauncher : MonoBehaviour
             _pullInteractable.OnPullReleased -= Release;
         }
 
-        gameObject.transform.parent = null;
-        inAir = false;
+        transform.parent = null;
+        inAir = true;
         SetPhysics(true);
 
         Vector3 force = transform.forward * value * speed;
@@ -72,7 +72,7 @@ public class ArrowLauncher : MonoBehaviour
         }
     }
 
-    private void StopFlight()
+    public void StopFlight()
     {
         inAir = false;
         SetPhysics(false);
