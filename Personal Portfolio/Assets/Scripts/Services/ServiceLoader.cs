@@ -10,7 +10,10 @@ public static class ServiceLoader
         var config = Resources.Load<ServiceConfig>("ServiceConfig");
 
         //If not found throw an exception
-        if (config == null) throw new System.Exception("Service Config scriptalbe not found in Resources folder.");
+        if (config == null)
+        {
+            throw new System.Exception("Service Config scriptalbe not found in Resources folder.");
+        }
 
         //Call the SetUpServices method to instantiate all services and set up required references and values
         config.SetUpServices();
