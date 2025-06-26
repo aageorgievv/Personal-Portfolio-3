@@ -27,41 +27,19 @@ public class ArrowImpactHandler : MonoBehaviour
             return;
         }
 
-        hasHit = true;
-        arrowLauncher.StopFlight();
-        HandleStick(collision);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        Hitzone zone = GetComponent<Hitzone>();
-        if (zone != null)
+        Hitzone zone = collision.collider.GetComponent<Hitzone>();
+        if(zone != null)
         {
             Target target = zone.GetComponentInParent<Target>();
-            if (target != null)
+            if(target != null)
             {
                 target.RegisterHit(zone);
             }
         }
-    }
 
-    private void HandleStick(Collision collision)
-    {
-        Vector3 arrowDirection = transform.forward;
-        Vector3 arrowUpDirection = transform.up;
-        ContactPoint contactPoint = collision.GetContact(0);
-
-        float randomDepth = Random.Range(minEmbedDepth, maxEmbedDepth);
-        Quaternion finalRotation = Quaternion.LookRotation(arrowDirection, arrowUpDirection);
-        Vector3 centerOffset = tip.localPosition;
-        Vector3 finalPosition = contactPoint.point - (finalRotation * centerOffset) + contactPoint.normal * -randomDepth;
-
-        transform.SetPositionAndRotation(finalPosition, finalRotation);
-
-        CreateStabJoint(collision, randomDepth);
-
-        transform.SetParent(collision.transform, true);
-        StartCoroutine(DespawnAfterDelay());
+        hasHit = true;
+        arrowLauncher.StopFlight();
+        DespawnAfterDelay();
     }
 
     public ConfigurableJoint CreateStabJoint(Collision collision, float randomDepth)
