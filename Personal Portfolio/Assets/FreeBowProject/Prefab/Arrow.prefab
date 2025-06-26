@@ -276,7 +276,7 @@ MonoBehaviour:
   maxEmbedDepth: 0.3
   ignoreLayers:
     serializedVersion: 2
-    m_Bits: 448
+    m_Bits: 1472
   tip: {fileID: 6934199930888556429}
 --- !u!114 &621861433328050730
 MonoBehaviour:
