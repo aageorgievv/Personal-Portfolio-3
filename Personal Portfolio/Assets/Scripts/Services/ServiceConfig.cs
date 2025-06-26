@@ -6,7 +6,6 @@ public class ServiceConfig : ScriptableObject
 {
     public void SetUpServices()
     {
-        UIManager uiManager = new();
-        Services.RegisterService(uiManager);
+
     }
 }
