@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1167031436777739933}
   - component: {fileID: 7852647526775916679}
   - component: {fileID: 747699199253225114}
+  - component: {fileID: 5035366877124731569}
   m_Layer: 0
   m_Name: BlackPart (1)
   m_TagString: Untagged
@@ -108,6 +109,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5035366877124731569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2412292350134110698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cb71f30b3e00a3429f3f3b0be3cd392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: 25
 --- !u!1 &4875691994609108195
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,6 +242,7 @@ GameObject:
   - component: {fileID: 8517890071762351208}
   - component: {fileID: 2238448121746205120}
   - component: {fileID: 2504841136710324346}
+  - component: {fileID: 8753602870967984858}
   m_Layer: 0
   m_Name: BlackPart (3)
   m_TagString: Untagged
@@ -324,6 +339,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8753602870967984858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6000205187874022888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cb71f30b3e00a3429f3f3b0be3cd392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: 25
 --- !u!1 &6610337514551985672
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,6 +364,7 @@ GameObject:
   - component: {fileID: 4228831807029819972}
   - component: {fileID: 8914270669465946946}
   - component: {fileID: 7636061903421512246}
+  - component: {fileID: 6281684295083143815}
   m_Layer: 0
   m_Name: BlackPart
   m_TagString: Untagged
@@ -432,6 +461,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6281684295083143815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6610337514551985672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cb71f30b3e00a3429f3f3b0be3cd392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: 25
 --- !u!1 &6925767396416648929
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,6 +483,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3455123780800124606}
+  - component: {fileID: 3144971304034896632}
   m_Layer: 0
   m_Name: Target
   m_TagString: Untagged
@@ -470,6 +513,18 @@ Transform:
   - {fileID: 8426824020080281369}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3144971304034896632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6925767396416648929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7088158ca4e54642a7c9c7ca316d590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8050449487027723367
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,6 +537,7 @@ GameObject:
   - component: {fileID: 2218774432543194189}
   - component: {fileID: 5578311456332979813}
   - component: {fileID: 3054997210188398611}
+  - component: {fileID: 4030462814017394787}
   m_Layer: 0
   m_Name: BlackPart (2)
   m_TagString: Untagged
@@ -578,6 +634,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4030462814017394787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8050449487027723367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cb71f30b3e00a3429f3f3b0be3cd392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: 25
 --- !u!1 &8467329087984061108
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,6 +659,7 @@ GameObject:
   - component: {fileID: 1588397739109920204}
   - component: {fileID: 529499027232263954}
   - component: {fileID: 2100774904058080640}
+  - component: {fileID: 9017304371656243226}
   m_Layer: 0
   m_Name: WhitePart
   m_TagString: Untagged
@@ -686,6 +756,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &9017304371656243226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8467329087984061108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cb71f30b3e00a3429f3f3b0be3cd392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: 50
 --- !u!1 &9075570395768162742
 GameObject:
   m_ObjectHideFlags: 0
@@ -698,6 +781,7 @@ GameObject:
   - component: {fileID: 6931876645702390044}
   - component: {fileID: 1025758735498206241}
   - component: {fileID: 7607253453873822377}
+  - component: {fileID: 3086001031582185216}
   m_Layer: 0
   m_Name: Bullseye
   m_TagString: Untagged
@@ -794,3 +878,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3086001031582185216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9075570395768162742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cb71f30b3e00a3429f3f3b0be3cd392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: 100

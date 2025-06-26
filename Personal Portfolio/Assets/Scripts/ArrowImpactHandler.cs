@@ -32,6 +32,19 @@ public class ArrowImpactHandler : MonoBehaviour
         HandleStick(collision);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        Hitzone zone = GetComponent<Hitzone>();
+        if (zone != null)
+        {
+            Target target = zone.GetComponentInParent<Target>();
+            if (target != null)
+            {
+                target.RegisterHit(zone);
+            }
+        }
+    }
+
     private void HandleStick(Collision collision)
     {
         Vector3 arrowDirection = transform.forward;
