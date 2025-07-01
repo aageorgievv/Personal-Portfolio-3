@@ -65,7 +65,6 @@ public class UIManager : MonoBehaviour
     {
         TMP_Text pointsText = wristUI.GetComponentInChildren<TMP_Text>(true);
         pointsText.text = $"{totalScore}";
-        Debug.Log($"{totalScore}");
     }
 }
 

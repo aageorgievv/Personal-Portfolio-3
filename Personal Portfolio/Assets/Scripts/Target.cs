@@ -6,8 +6,10 @@ public class Target : MonoBehaviour
 {
     [SerializeField] private UIManager uiManager;
     [SerializeField] private GameObject movePoint;
+    [SerializeField] private float speed = 5f;
     [SerializeField] private float resetTime = 5f;
     [SerializeField] private bool canMove = false;
+
 
     private Animator animator;
 
@@ -15,7 +17,6 @@ public class Target : MonoBehaviour
     private bool isMoving = false;
 
     private float hitTime = -1;
-    private float speed = 5f;
 
     private Vector3 startPosition;
     private Vector3 endPosition;
@@ -25,12 +26,13 @@ public class Target : MonoBehaviour
         animator = GetComponent<Animator>();
         startPosition = transform.position;
         endPosition = movePoint.transform.position;
+
+        StartCoroutine(Move());
     }
 
     private void Update()
     {
         TargetReset();
-        StartCoroutine(Move());
     }
     public void RegisterHit(Hitzone zone)
     {
@@ -72,6 +74,7 @@ public class Target : MonoBehaviour
             }
 
             isMoving = false;
+            StartCoroutine(Move());
         }
     }
 }
