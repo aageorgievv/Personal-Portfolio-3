@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Target : MonoBehaviour
@@ -14,7 +15,6 @@ public class Target : MonoBehaviour
     private Animator animator;
 
     private bool isHit = false;
-    private bool isMoving = false;
 
     private float hitTime = -1;
 
@@ -32,7 +32,7 @@ public class Target : MonoBehaviour
 
     private void Update()
     {
-        TargetReset();
+        TargetRise();
     }
     public void RegisterHit(Hitzone zone)
     {
@@ -41,16 +41,18 @@ public class Target : MonoBehaviour
             uiManager.AddScore(zone.points);
             animator.SetTrigger("TargetDrop");
             isHit = true;
+            canMove = false;
             hitTime = Time.time;
         }
     }
 
-    private void TargetReset()
+    public void TargetRise()
     {
         if(isHit && Time.time > hitTime + resetTime)
         {
             animator.SetTrigger("TargetRise");
             isHit = false;
+            canMove = true;
             hitTime = -1;
         }
     }
@@ -59,7 +61,6 @@ public class Target : MonoBehaviour
     {
         if(canMove)
         {
-            isMoving = true;
 
             while (Vector3.Distance(transform.position, endPosition) > 0.1f)
             {
@@ -73,7 +74,6 @@ public class Target : MonoBehaviour
                 yield return null;
             }
 
-            isMoving = false;
             StartCoroutine(Move());
         }
     }

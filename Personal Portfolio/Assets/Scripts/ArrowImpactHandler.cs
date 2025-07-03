@@ -5,8 +5,6 @@ public class ArrowImpactHandler : MonoBehaviour
 {
     [Header("Impact Settings")]
     [SerializeField] private float stickDuration = 3f;
-    [SerializeField] private float minEmbedDepth = 0.05f;
-    [SerializeField] private float maxEmbedDepth = 0.15f;
     [SerializeField] private LayerMask ignoreLayers;
     [SerializeField] private Transform tip;
 
@@ -30,6 +28,7 @@ public class ArrowImpactHandler : MonoBehaviour
         Hitzone zone = collision.collider.GetComponent<Hitzone>();
         if(zone != null)
         {
+            transform.SetParent(zone.transform, false);
             Target target = zone.GetComponentInParent<Target>();
             if(target != null)
             {
