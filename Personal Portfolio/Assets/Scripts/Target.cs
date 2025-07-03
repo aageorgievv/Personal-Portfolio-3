@@ -7,16 +7,13 @@ public class Target : MonoBehaviour
 {
     [SerializeField] private UIManager uiManager;
     [SerializeField] private GameObject movePoint;
-    [SerializeField] private float speed = 5f;
-    [SerializeField] private float resetTime = 5f;
     [SerializeField] private bool canMove = false;
 
 
     private Animator animator;
+    private TargetPracticeManager manager;
 
     private bool isHit = false;
-
-    private float hitTime = -1;
 
     private Vector3 startPosition;
     private Vector3 endPosition;
@@ -34,6 +31,12 @@ public class Target : MonoBehaviour
     {
         TargetRise();
     }
+
+    public void Initialize(TargetPracticeManager manager)
+    {
+        this.manager = manager;
+    }
+
     public void RegisterHit(Hitzone zone)
     {
         if (!isHit)
@@ -42,35 +45,30 @@ public class Target : MonoBehaviour
             animator.SetTrigger("TargetDrop");
             isHit = true;
             canMove = false;
-            hitTime = Time.time;
         }
     }
 
     public void TargetRise()
     {
-        if(isHit && Time.time > hitTime + resetTime)
-        {
-            animator.SetTrigger("TargetRise");
-            isHit = false;
-            canMove = true;
-            hitTime = -1;
-        }
+        animator.SetTrigger("TargetRise");
+        isHit = false;
+        canMove = true;
     }
 
     private IEnumerator Move()
     {
-        if(canMove)
+        if (canMove)
         {
 
             while (Vector3.Distance(transform.position, endPosition) > 0.1f)
             {
-                transform.position = Vector3.MoveTowards(transform.position, endPosition, speed * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, endPosition, manager.Speed * Time.deltaTime);
                 yield return null;
             }
 
             while (Vector3.Distance(transform.position, startPosition) > 0.1f)
             {
-                transform.position = Vector3.MoveTowards(transform.position, startPosition, speed * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, startPosition, manager.Speed * Time.deltaTime);
                 yield return null;
             }
 

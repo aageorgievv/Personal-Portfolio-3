@@ -12,21 +12,36 @@ public class TargetPracticeManager : MonoBehaviour
     [SerializeField] private float respawnRate = 5f;
     [SerializeField] private float targetActivationRate = 2f;
 
-    void Start()
-    {
+    private float hitTime = -1;
 
+    private void Start()
+    {
+        foreach (Target target in targets)
+        {
+            target.Initialize(this);
+        }
+
+        StartCountDown();
     }
 
-    void Update()
+    private void Update()
     {
-
+        TargetActivation();
     }
 
     private void TargetActivation()
     {
-        int randomIndex = Random.Range(0, targets.Count);
-        Target randomTarget = targets[randomIndex];
+        if(Time.time > hitTime + respawnRate)
+        {
+            int randomIndex = Random.Range(0, targets.Count);
+            Target randomTarget = targets[randomIndex];
 
-        randomTarget.TargetRise();
+            randomTarget.TargetRise();
+        }
+    }
+
+    public void StartCountDown()
+    {
+        hitTime = Time.time;
     }
 }
