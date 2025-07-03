@@ -28,7 +28,7 @@ public class ArrowImpactHandler : MonoBehaviour
         Hitzone zone = collision.collider.GetComponent<Hitzone>();
         if(zone != null)
         {
-            transform.SetParent(zone.transform, false);
+            transform.SetParent(zone.transform, true);
             Target target = zone.GetComponentInParent<Target>();
             if(target != null)
             {

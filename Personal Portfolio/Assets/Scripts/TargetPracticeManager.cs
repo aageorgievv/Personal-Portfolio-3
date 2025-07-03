@@ -5,14 +5,14 @@ using UnityEngine;
 public class TargetPracticeManager : MonoBehaviour
 {
     public float Speed => speed;
-    public float RespawnRate => respawnRate;
+    public float TargetRiseTime => targetRiseTime;
 
     [SerializeField] private List<Target> targets;
     [SerializeField] private float speed = 1f;
-    [SerializeField] private float respawnRate = 5f;
-    [SerializeField] private float targetActivationRate = 2f;
+    [SerializeField] private float targetRiseTime = 5f;
 
-    private float hitTime = -1;
+    private float hitTime = -1f;
+    private bool isTargetActive = false;
 
     private void Start()
     {
@@ -31,11 +31,12 @@ public class TargetPracticeManager : MonoBehaviour
 
     private void TargetActivation()
     {
-        if(Time.time > hitTime + respawnRate)
+        if(!isTargetActive && Time.time > hitTime + targetRiseTime)
         {
             int randomIndex = Random.Range(0, targets.Count);
             Target randomTarget = targets[randomIndex];
-
+            hitTime = 0f;
+            isTargetActive = true;
             randomTarget.TargetRise();
         }
     }
@@ -43,5 +44,7 @@ public class TargetPracticeManager : MonoBehaviour
     public void StartCountDown()
     {
         hitTime = Time.time;
+        isTargetActive = false;
+        Debug.LogError("Reset");
     }
 }

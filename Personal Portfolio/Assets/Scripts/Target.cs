@@ -20,16 +20,19 @@ public class Target : MonoBehaviour
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
         startPosition = transform.position;
-        endPosition = movePoint.transform.position;
+        if(movePoint != null )
+        {
+            endPosition = movePoint.transform.position;
+        }
 
         StartCoroutine(Move());
     }
 
     private void Update()
     {
-        TargetRise();
+
     }
 
     public void Initialize(TargetPracticeManager manager)
@@ -45,6 +48,7 @@ public class Target : MonoBehaviour
             animator.SetTrigger("TargetDrop");
             isHit = true;
             canMove = false;
+            manager.StartCountDown();
         }
     }
 
@@ -52,7 +56,6 @@ public class Target : MonoBehaviour
     {
         animator.SetTrigger("TargetRise");
         isHit = false;
-        canMove = true;
     }
 
     private IEnumerator Move()

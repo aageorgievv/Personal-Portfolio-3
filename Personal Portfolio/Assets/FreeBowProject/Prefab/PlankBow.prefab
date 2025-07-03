@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2185361115692925597}
   - component: {fileID: 3005146807287123688}
   - component: {fileID: 7773015984902859734}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: String
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +297,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8091250453159535350}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: AttachPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,7 +328,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7022933360431096436}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Notch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -361,7 +361,7 @@ GameObject:
   - component: {fileID: 98435889503237070}
   - component: {fileID: 7000107866012806606}
   - component: {fileID: 8906549032932869270}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -445,7 +445,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 295816738321003360}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -477,7 +477,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5742241421782336523}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlankBow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -514,7 +514,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7544021284994201208}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -548,7 +548,7 @@ GameObject:
   - component: {fileID: 147553193228399114}
   - component: {fileID: 7435463007607345169}
   - component: {fileID: 1127872019187984508}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -690,6 +690,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b3de4e686c5b7044088888c14fa882a4, type: 3}
       propertyPath: m_Name
       value: PlankBow_Free
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b3de4e686c5b7044088888c14fa882a4, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
