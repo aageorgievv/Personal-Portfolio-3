@@ -45,6 +45,5 @@ public class TargetPracticeManager : MonoBehaviour
     {
         hitTime = Time.time;
         isTargetActive = false;
-        Debug.LogError("Reset");
     }
 }

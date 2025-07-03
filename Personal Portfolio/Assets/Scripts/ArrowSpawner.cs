@@ -6,7 +6,7 @@ public class ArrowSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject arrowPrefab;
     [SerializeField] private GameObject notchPoint;
-    [SerializeField] private float spawnDelay = 1f;
+    [SerializeField] private float spawnDelay = 0.3f;
 
     private XRGrabInteractable bow;
     private XRPullInteractable pullInteractable;
