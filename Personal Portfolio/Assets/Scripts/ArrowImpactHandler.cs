@@ -38,7 +38,7 @@ public class ArrowImpactHandler : MonoBehaviour
 
         hasHit = true;
         arrowLauncher.StopFlight();
-        DespawnAfterDelay();
+        StartCoroutine(DespawnAfterDelay());
     }
 
     public ConfigurableJoint CreateStabJoint(Collision collision, float randomDepth)

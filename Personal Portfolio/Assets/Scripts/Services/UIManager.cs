@@ -1,4 +1,5 @@
 
+using Mono.Cecil;
 using TMPro;
 using UnityEngine;
 using UnityEngine.XR;
@@ -6,11 +7,15 @@ using UnityEngine.XR;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] GameObject wristUI;
+    [SerializeField] GameObject totalTargetsTextParent;
+    [SerializeField] TMP_Text totalTargetsText;
+    [SerializeField] GameObject recordTextParent;
+    [SerializeField] TMP_Text recordText;
     [SerializeField] XRNode handNode = XRNode.LeftHand;
     [SerializeField] private float angleThreshHold = 45f;
 
-    private TMP_Text pointsText;
-    private int totalScore;
+    private int previousScore = 0;
+    private int currentScore;
 
     private void Awake()
     {
@@ -58,13 +63,41 @@ public class UIManager : MonoBehaviour
 
     public void AddScore(int amount)
     {
-        totalScore += amount;
+        currentScore += amount;
     }
 
     private void UpdateScoreUI()
     {
         TMP_Text pointsText = wristUI.GetComponentInChildren<TMP_Text>(true);
-        pointsText.text = $"{totalScore}";
+        pointsText.text = $"{currentScore}";
+    }
+
+    public void UpdateTargetHitUI(int current, int total)
+    {
+        totalTargetsText.text = $"{current}/{total}";
+    }
+
+    public void EnableTotalTargetsText(bool state)
+    {
+        totalTargetsTextParent.SetActive(state);
+    }
+
+    public void UpdateRecordText()
+    {
+        if(previousScore < currentScore)
+        {
+            recordText.text = $"{currentScore}";
+            previousScore = currentScore;
+        }
+    }
+
+    public void EnableRecordText(bool state)
+    {
+        recordTextParent.SetActive(state);
+    }
+    public void ResetScore()
+    {
+        currentScore = 0;
     }
 }
 

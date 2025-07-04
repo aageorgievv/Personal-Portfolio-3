@@ -13,8 +13,6 @@ public class Target : MonoBehaviour
     private Animator animator;
     private TargetPracticeManager manager;
 
-    private bool isHit = false;
-
     private Vector3 startPosition;
     private Vector3 endPosition;
 
@@ -22,7 +20,7 @@ public class Target : MonoBehaviour
     {
         animator = GetComponentInChildren<Animator>();
         startPosition = transform.position;
-        if(movePoint != null )
+        if (movePoint != null)
         {
             endPosition = movePoint.transform.position;
         }
@@ -42,20 +40,15 @@ public class Target : MonoBehaviour
 
     public void RegisterHit(Hitzone zone)
     {
-        if (!isHit)
-        {
-            uiManager.AddScore(zone.points);
-            animator.SetTrigger("TargetDrop");
-            isHit = true;
-            canMove = false;
-            manager.StartCountDown();
-        }
+        animator.SetTrigger("TargetDrop");
+        uiManager.AddScore(zone.points);
+        canMove = false;
+        manager.RegisterTargetHit(zone);
     }
 
     public void TargetRise()
     {
         animator.SetTrigger("TargetRise");
-        isHit = false;
     }
 
     private IEnumerator Move()
