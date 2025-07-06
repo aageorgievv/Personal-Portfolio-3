@@ -2334,7 +2334,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7613193107076593259, guid: cfe1c42403cc97c43bff9200e184dca8, type: 3}
       propertyPath: canMove
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7613193107076593259, guid: cfe1c42403cc97c43bff9200e184dca8, type: 3}
       propertyPath: movePoint
@@ -4702,7 +4702,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7613193107076593259, guid: cfe1c42403cc97c43bff9200e184dca8, type: 3}
       propertyPath: canMove
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7613193107076593259, guid: cfe1c42403cc97c43bff9200e184dca8, type: 3}
       propertyPath: movePoint

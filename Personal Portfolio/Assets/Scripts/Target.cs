@@ -16,6 +16,8 @@ public class Target : MonoBehaviour
     private Vector3 startPosition;
     private Vector3 endPosition;
 
+    private bool isTargetActivated = false;
+
     private void Start()
     {
         animator = GetComponentInChildren<Animator>();
@@ -25,7 +27,6 @@ public class Target : MonoBehaviour
             endPosition = movePoint.transform.position;
         }
 
-        StartCoroutine(Move());
     }
 
     private void Update()
@@ -42,27 +43,29 @@ public class Target : MonoBehaviour
     {
         animator.SetTrigger("TargetDrop");
         uiManager.AddScore(zone.points);
-        canMove = false;
         manager.RegisterTargetHit(zone);
+        isTargetActivated = false;
     }
 
     public void TargetRise()
     {
         animator.SetTrigger("TargetRise");
+        isTargetActivated = true;
+        StartCoroutine(Move());
     }
 
     private IEnumerator Move()
     {
-        if (canMove)
+        if (canMove && manager.SessionStarted && isTargetActivated)
         {
 
-            while (Vector3.Distance(transform.position, endPosition) > 0.1f)
+            while (Vector3.Distance(transform.position, endPosition) > 0.1f && isTargetActivated)
             {
                 transform.position = Vector3.MoveTowards(transform.position, endPosition, manager.Speed * Time.deltaTime);
                 yield return null;
             }
 
-            while (Vector3.Distance(transform.position, startPosition) > 0.1f)
+            while (Vector3.Distance(transform.position, startPosition) > 0.1f && isTargetActivated)
             {
                 transform.position = Vector3.MoveTowards(transform.position, startPosition, manager.Speed * Time.deltaTime);
                 yield return null;

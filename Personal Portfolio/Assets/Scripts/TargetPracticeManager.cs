@@ -6,6 +6,7 @@ public class TargetPracticeManager : MonoBehaviour
 {
     public float Speed => speed;
     public float TargetRiseTime => targetRiseTime;
+    public bool SessionStarted => sessionStarted;
 
     [SerializeField] private UIManager uiManager;
     [SerializeField] private List<Target> targets;
